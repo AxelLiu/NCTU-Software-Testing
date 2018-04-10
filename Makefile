@@ -76,7 +76,7 @@ hw1.o : $(USER_DIR)/hw1.cc $(USER_DIR)/hw1.h $(GTEST_HEADERS)
 
 hw1_unittest.o : $(USER_DIR)/hw1_unittest.cc \
                      $(USER_DIR)/hw1.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/hw1.cc
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/hw1_unittest.cc
 
 hw1_unittest : hw1.o hw1_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
