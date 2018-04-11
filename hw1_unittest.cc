@@ -187,3 +187,11 @@ TEST(BoundaryValue, Robust_Worst_Case)
 	EXPECT_EQ("INVALID", IsTriangle(201, 201, 100));
 	EXPECT_EQ("INVALID", IsTriangle(201, 201, 201));
 }
+
+TEST(EquivalenceClass, Weak_Robust)
+{
+	EXPECT_EQ("EQUILATERAL", IsTriangle(5, 5, 5));
+	EXPECT_EQ("ISOSCELES", IsTriangle(2, 2, 3));
+	EXPECT_EQ("SCALENE", IsTriangle(3, 4, 5));
+	EXPECT_EQ("INVALID", IsTriangle(4, 1, 2));
+}
