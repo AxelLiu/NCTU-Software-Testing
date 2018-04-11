@@ -28,7 +28,7 @@ TEST(BoundaryValue, Robust)
 	EXPECT_EQ("INVALID", IsTriangle(100, 100, 201));
 }
 
-TEST(BoundaryValue, Worst_case)
+TEST(BoundaryValue, Normal_Worst_Case)
 {
 	EXPECT_EQ("EQUILATERAL", IsTriangle(1, 1, 1));
 	EXPECT_EQ("INVALID", IsTriangle(1, 1, 2));
@@ -74,11 +74,11 @@ TEST(BoundaryValue, Worst_case)
 	EXPECT_EQ("INVALID", IsTriangle(2, 199, 2));
 	EXPECT_EQ("INVALID", IsTriangle(2, 199, 100));
 	EXPECT_EQ("ISOSCELES", IsTriangle(2, 199, 199));
-	EXPECT_EQ("UNEQUAL", IsTriangle(2, 199, 200));
+	EXPECT_EQ("SCALENE", IsTriangle(2, 199, 200));
 	EXPECT_EQ("INVALID", IsTriangle(2, 200, 1));
 	EXPECT_EQ("INVALID", IsTriangle(2, 200, 2));
 	EXPECT_EQ("INVALID", IsTriangle(2, 200, 100));
-	EXPECT_EQ("UNEQUAL", IsTriangle(2, 200, 199));
+	EXPECT_EQ("SCALENE", IsTriangle(2, 200, 199));
 	EXPECT_EQ("ISOSCELES", IsTriangle(2, 200, 200));
 	EXPECT_EQ("INVALID", IsTriangle(100, 1, 1));
 	EXPECT_EQ("INVALID", IsTriangle(100, 1, 2));
@@ -99,11 +99,11 @@ TEST(BoundaryValue, Worst_case)
 	EXPECT_EQ("INVALID", IsTriangle(100, 199, 2));
 	EXPECT_EQ("ISOSCELES", IsTriangle(100, 199, 100));
 	EXPECT_EQ("ISOSCELES", IsTriangle(100, 199, 199));
-	EXPECT_EQ("UNEQUAL", IsTriangle(100, 199, 200));
+	EXPECT_EQ("SCALENE", IsTriangle(100, 199, 200));
 	EXPECT_EQ("INVALID", IsTriangle(100, 200, 1));
 	EXPECT_EQ("INVALID", IsTriangle(100, 200, 2));
 	EXPECT_EQ("INVALID", IsTriangle(100, 200, 100));
-	EXPECT_EQ("UNEQUAL", IsTriangle(100, 200, 199));
+	EXPECT_EQ("SCALENE", IsTriangle(100, 200, 199));
 	EXPECT_EQ("ISOSCELES", IsTriangle(100, 200, 200));
 	EXPECT_EQ("INVALID", IsTriangle(199, 1, 1));
 	EXPECT_EQ("INVALID", IsTriangle(199, 1, 2));
@@ -114,20 +114,20 @@ TEST(BoundaryValue, Worst_case)
 	EXPECT_EQ("INVALID", IsTriangle(199, 2, 2));
 	EXPECT_EQ("INVALID", IsTriangle(199, 2, 100));
 	EXPECT_EQ("ISOSCELES", IsTriangle(199, 2, 199));
-	EXPECT_EQ("UNEQUAL", IsTriangle(199, 2, 200));
+	EXPECT_EQ("SCALENE", IsTriangle(199, 2, 200));
 	EXPECT_EQ("INVALID", IsTriangle(199, 100, 1));
 	EXPECT_EQ("INVALID", IsTriangle(199, 100, 2));
 	EXPECT_EQ("ISOSCELES", IsTriangle(199, 100, 100));
 	EXPECT_EQ("ISOSCELES", IsTriangle(199, 100, 199));
-	EXPECT_EQ("UNEQUAL", IsTriangle(199, 100, 200));
+	EXPECT_EQ("SCALENE", IsTriangle(199, 100, 200));
 	EXPECT_EQ("ISOSCELES", IsTriangle(199, 199, 1));
 	EXPECT_EQ("ISOSCELES", IsTriangle(199, 199, 2));
 	EXPECT_EQ("ISOSCELES", IsTriangle(199, 199, 100));
 	EXPECT_EQ("EQUILATERAL", IsTriangle(199, 199, 199));
 	EXPECT_EQ("ISOSCELES", IsTriangle(199, 199, 200));
 	EXPECT_EQ("INVALID", IsTriangle(199, 200, 1));
-	EXPECT_EQ("UNEQUAL", IsTriangle(199, 200, 2));
-	EXPECT_EQ("UNEQUAL", IsTriangle(199, 200, 100));
+	EXPECT_EQ("SCALENE", IsTriangle(199, 200, 2));
+	EXPECT_EQ("SCALENE", IsTriangle(199, 200, 100));
 	EXPECT_EQ("ISOSCELES", IsTriangle(199, 200, 199));
 	EXPECT_EQ("ISOSCELES", IsTriangle(199, 200, 200));
 	EXPECT_EQ("INVALID", IsTriangle(200, 1, 1));
@@ -138,16 +138,16 @@ TEST(BoundaryValue, Worst_case)
 	EXPECT_EQ("INVALID", IsTriangle(200, 2, 1));
 	EXPECT_EQ("INVALID", IsTriangle(200, 2, 2));
 	EXPECT_EQ("INVALID", IsTriangle(200, 2, 100));
-	EXPECT_EQ("UNEQUAL", IsTriangle(200, 2, 199));
+	EXPECT_EQ("SCALENE", IsTriangle(200, 2, 199));
 	EXPECT_EQ("ISOSCELES", IsTriangle(200, 2, 200));
 	EXPECT_EQ("INVALID", IsTriangle(200, 100, 1));
 	EXPECT_EQ("INVALID", IsTriangle(200, 100, 2));
 	EXPECT_EQ("INVALID", IsTriangle(200, 100, 100));
-	EXPECT_EQ("UNEQUAL", IsTriangle(200, 100, 199));
+	EXPECT_EQ("SCALENE", IsTriangle(200, 100, 199));
 	EXPECT_EQ("ISOSCELES", IsTriangle(200, 100, 200));
 	EXPECT_EQ("INVALID", IsTriangle(200, 199, 1));
-	EXPECT_EQ("UNEQUAL", IsTriangle(200, 199, 2));
-	EXPECT_EQ("UNEQUAL", IsTriangle(200, 199, 100));
+	EXPECT_EQ("SCALENE", IsTriangle(200, 199, 2));
+	EXPECT_EQ("SCALENE", IsTriangle(200, 199, 100));
 	EXPECT_EQ("ISOSCELES", IsTriangle(200, 199, 199));
 	EXPECT_EQ("ISOSCELES", IsTriangle(200, 199, 200));
 	EXPECT_EQ("ISOSCELES", IsTriangle(200, 200, 1));
@@ -155,4 +155,35 @@ TEST(BoundaryValue, Worst_case)
 	EXPECT_EQ("ISOSCELES", IsTriangle(200, 200, 100));
 	EXPECT_EQ("ISOSCELES", IsTriangle(200, 200, 199));
 	EXPECT_EQ("EQUILATERAL", IsTriangle(200, 200, 200));
+}
+
+TEST(BoundaryValue, Robust_Worst_Case)
+{
+	EXPECT_EQ("INVALID", IsTriangle(0, 0, 0));
+	EXPECT_EQ("INVALID", IsTriangle(0, 0, 100));
+	EXPECT_EQ("INVALID", IsTriangle(0, 0, 201));
+	EXPECT_EQ("INVALID", IsTriangle(0, 100, 0));
+	EXPECT_EQ("INVALID", IsTriangle(0, 100, 100));
+	EXPECT_EQ("INVALID", IsTriangle(0, 100, 201));
+	EXPECT_EQ("INVALID", IsTriangle(0, 201, 0));
+	EXPECT_EQ("INVALID", IsTriangle(0, 201, 100));
+	EXPECT_EQ("INVALID", IsTriangle(0, 201, 201));
+	EXPECT_EQ("INVALID", IsTriangle(100, 0, 0));
+	EXPECT_EQ("INVALID", IsTriangle(100, 0, 100));
+	EXPECT_EQ("INVALID", IsTriangle(100, 0, 201));
+	EXPECT_EQ("INVALID", IsTriangle(100, 100, 0));
+	EXPECT_EQ("EQUILATERAL", IsTriangle(100, 100, 100));
+	EXPECT_EQ("INVALID", IsTriangle(100, 100, 201));
+	EXPECT_EQ("INVALID", IsTriangle(100, 201, 0));
+	EXPECT_EQ("INVALID", IsTriangle(100, 201, 100));
+	EXPECT_EQ("INVALID", IsTriangle(100, 201, 201));
+	EXPECT_EQ("INVALID", IsTriangle(201, 0, 0));
+	EXPECT_EQ("INVALID", IsTriangle(201, 0, 100));
+	EXPECT_EQ("INVALID", IsTriangle(201, 0, 201));
+	EXPECT_EQ("INVALID", IsTriangle(201, 100, 0));
+	EXPECT_EQ("INVALID", IsTriangle(201, 100, 100));
+	EXPECT_EQ("INVALID", IsTriangle(201, 100, 201));
+	EXPECT_EQ("INVALID", IsTriangle(201, 201, 0));
+	EXPECT_EQ("INVALID", IsTriangle(201, 201, 100));
+	EXPECT_EQ("INVALID", IsTriangle(201, 201, 201));
 }
