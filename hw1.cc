@@ -13,5 +13,5 @@ std::string IsTriangle(int a, int b, int c)
 	if((a == b && b != c) || (a == c && a != b) || (b == c && a != b))
 		return "ISOSCELES";
 
-	return "UNEQUAL";
+	return "SCALENE";
 }
