@@ -353,3 +353,15 @@ TEST(EquivalenceClass, Strong_Robust)
 	EXPECT_EQ("INVALID", IsTriangle(5, 201, 5));
 	EXPECT_EQ("INVALID", IsTriangle(5, 5, 201));
 }
+
+TEST(DecisionTable, Normal)
+{
+	EXPECT_EQ("INVALID", IsTriangle(4, 1, 2));
+	EXPECT_EQ("INVALID", IsTriangle(1, 4, 2));
+	EXPECT_EQ("INVALID", IsTriangle(1, 2, 4));
+	EXPECT_EQ("EQUILATERAL", IsTriangle(5, 5, 5));
+	EXPECT_EQ("ISOSCELES", IsTriangle(2, 2, 3));
+	EXPECT_EQ("ISOSCELES", IsTriangle(2, 3, 2));
+	EXPECT_EQ("ISOSCELES", IsTriangle(3, 2, 2));
+	EXPECT_EQ("SCALENE", IsTriangle(3, 4, 5));
+}
