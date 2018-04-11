@@ -335,3 +335,21 @@ TEST(EquivalenceClass, Strong_Normal)
 	EXPECT_EQ("ISOSCELES", IsTriangle(5, 5, 4));
 	EXPECT_EQ("EQUILATERAL", IsTriangle(5, 5, 5));
 }
+
+TEST(EquivalenceClass, Strong_Robust)
+{
+	EXPECT_EQ("INVALID", IsTriangle(-1, -1, -1));
+	EXPECT_EQ("INVALID", IsTriangle(-1, -1, 5));
+	EXPECT_EQ("INVALID", IsTriangle(-1, 5, -1));
+	EXPECT_EQ("INVALID", IsTriangle(-1, 5, 5));
+	EXPECT_EQ("INVALID", IsTriangle(5, -1, -1));
+	EXPECT_EQ("INVALID", IsTriangle(5, -1, 5));
+	EXPECT_EQ("INVALID", IsTriangle(5, 5, -1));
+	EXPECT_EQ("INVALID", IsTriangle(201, 201, 201));
+	EXPECT_EQ("INVALID", IsTriangle(201, 201, 5));
+	EXPECT_EQ("INVALID", IsTriangle(201, 5, 201));
+	EXPECT_EQ("INVALID", IsTriangle(201, 5, 5));
+	EXPECT_EQ("INVALID", IsTriangle(5, 201, 201));
+	EXPECT_EQ("INVALID", IsTriangle(5, 201, 5));
+	EXPECT_EQ("INVALID", IsTriangle(5, 5, 201));
+}
