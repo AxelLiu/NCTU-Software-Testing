@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'make TESTS'
+                sh 'make test'
             }
         }
     }
