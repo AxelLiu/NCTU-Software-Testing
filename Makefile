@@ -80,3 +80,6 @@ hw1_unittest.o : $(USER_DIR)/hw1_unittest.cc \
 
 hw1_unittest : hw1.o hw1_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
+
+test : hw1_unittest
+	./hw1_unittest
