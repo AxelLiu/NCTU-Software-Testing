@@ -33,3 +33,9 @@
 
 hw1_unittest
 *.swp
+
+#gcov file
+*.gcov
+*.gcno
+*.gcda
+

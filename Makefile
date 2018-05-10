@@ -25,7 +25,7 @@ USER_DIR = .
 CPPFLAGS += -isystem $(GTEST_DIR)/include
 
 # Flags passed to the C++ compiler.
-CXXFLAGS += -g -Wall -Wextra -pthread
+CXXFLAGS += -g -Wall -Wextra -pthread -fprofile-arcs -ftest-coverage
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
@@ -41,7 +41,7 @@ GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
 all : $(TESTS)
 
 clean :
-	rm -f $(TESTS) gtest.a gtest_main.a *.o
+	rm -f $(TESTS) gtest.a gtest_main.a *.o *.gcno *.gcov *.gcda
 
 # Builds gtest.a and gtest_main.a.
 
@@ -83,3 +83,6 @@ hw1_unittest : hw1.o hw1_unittest.o gtest_main.a
 
 test : hw1_unittest
 	./hw1_unittest
+
+gcov : hw1_unittest
+	gcov hw1.cc
