@@ -3,6 +3,8 @@ compiler:
 - g++
 os:
 - linux
+install:
+	- sudo pip install codecov
 script:
 - make
 - make test
@@ -10,3 +12,5 @@ script:
 branches:
   only:
   - master
+after_success:
+	  - codecov -t 40b763f8-6b79-4e0c-9d1d-dcf0e236a76d -X gcov
