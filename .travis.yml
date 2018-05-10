@@ -4,7 +4,7 @@ compiler:
 os:
 - linux
 install:
-	- sudo pip install codecov
+- sudo pip install codecov
 script:
 - make
 - make test
@@ -13,4 +13,4 @@ branches:
   only:
   - master
 after_success:
-	- codecov -X gcov
+- codecov -X gcov
