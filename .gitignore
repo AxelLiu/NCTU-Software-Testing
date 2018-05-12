@@ -31,11 +31,14 @@
 *.out
 *.app
 
+# My Executables
 hw1_unittest
 *.swp
+nextdate_unittest
 
-#gcov file
+# Gcov file
 *.gcov
 *.gcno
 *.gcda
 
+.vscode
