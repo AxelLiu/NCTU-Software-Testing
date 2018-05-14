@@ -42,3 +42,4 @@ nextdate_unittest
 *.gcda
 
 .vscode
+*.gdoc
