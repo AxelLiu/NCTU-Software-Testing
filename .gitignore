@@ -43,3 +43,5 @@ nextdate_unittest
 
 .vscode
 *.gdoc
+*.png
+*.xml

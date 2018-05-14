@@ -18,7 +18,7 @@ std::string nextDate(int year, int month, int day)
     else if(day > days[month])
         return "Invalid";
     else if(day == days[month]) {
-        month += 1; day = 1;
+        month += 1; day = 0;
     }
     return changeDate(year, month, day+1);
 }
